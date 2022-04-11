@@ -1,0 +1,34 @@
+<h4 class="text-center"> SOCIAL!!</h4>
+
+<form [formGroup]="socialForm"  class="form mt-4" novalidate (submit)="sendSocial()">
+    <label for="cars">Insira uma nova rede social:</label>
+
+    <div class="form-group">
+        <input formControlName="nome" placeholder="Nome ex: Instagram" class="form-control" autofocus >
+    </div>    
+
+    <div class="form-group">
+        <input formControlName="link" placeholder="Link ex: @EuMesma" class="form-control">
+    </div> 
+    
+    <button [disabled]="socialForm.invalid" class="btn btn-primary btn-block">Enviar</button>
+</form>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Link</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of allSociais; let i=index">    
+            <td>{{i+1}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.link}}</td>
+        </tr>
+    </tbody>
+</table>
+
+

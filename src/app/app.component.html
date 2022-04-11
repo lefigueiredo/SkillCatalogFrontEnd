@@ -1,0 +1,87 @@
+<nz-layout >
+  <nz-sider 
+    id="menu-bg" 
+    nzCollapsible 
+    [(nzCollapsed)]="isCollapsed" 
+    nzBreakpoint="lg" 
+    [nzCollapsedWidth]="80" 
+    [nzWidth]="270"    
+    *ngIf="user$ | async as user;"
+  >        
+      <div class="profileDiv">
+        <img class="profilePic" src="{{profileImg}}">
+        <span>Oie {{nome}}</span>
+      </div>
+
+      <ul nz-menu id="menu-bg" nzTheme="dark" nzMode="inline"> 
+        <li nz-menu-item #menuHome [routerLink]="['/main']">
+          <img src="../../assets/icons/use.svg">
+          <span class="menuLabel">Meu Perfil</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li>
+
+        <li nz-menu-item #menuLin [routerLink]="['/pesquisa']">
+          <img src="../../assets/icons/sea.svg">
+          <span class="menuLabel">Pesquisar</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li>
+        
+        <li nz-menu-item #menuIdi [routerLink]="['/idiomas']">
+          <img src="../../assets/icons/idi.svg">
+          <span class="menuLabel">Meus Idiomas</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li>
+
+        <!-- <li nz-menu-item #menuCert>
+          <img src="../../assets/icons/cer.svg">
+          <span class="menuLabel">Meus Certificados</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li> -->
+
+        <li nz-menu-item id="menu-forma" #menuForm [routerLink]="['/formacoes']">
+          <img src="../../assets/icons/for.svg">
+          <span class="menuLabel">Minhas Formações</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li>
+
+        <li nz-menu-item #menuProf [routerLink]="['/proficiencias']">
+          <img src="../../assets/icons/prof.svg">
+          <span class="menuLabel">Minha Proficiências</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li>
+
+        <li *ngIf="userNv" nz-menu-item #menuProf [routerLink]="['/registro']">
+          <img src="../../assets/icons/func-head.svg">
+          <span class="menuLabel">Editar Funcionários</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li>
+
+        <!-- <li nz-menu-item #menuProj>
+          <img src="../../assets/icons/pro.svg">
+          <span class="menuLabel">Meus Projetos</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li> -->
+
+        <!-- <li nz-menu-item #menuLin [routerLink]="['/social']">
+          <img src="../../assets/icons/soc.svg">
+          <span class="menuLabel">Meu Social</span>
+          <img class="menuArrow" src="../../assets/icons/menu.svg">
+        </li> -->
+
+      </ul>
+  </nz-sider>
+
+  <nz-layout>    
+    <sc-header ></sc-header>
+    <nz-content>
+      <router-outlet class="oie"></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
+
+
+
+
+
+

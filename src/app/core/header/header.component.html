@@ -1,0 +1,20 @@
+<header class="fixed-top" id="bg">
+    <nav  class="navbar navbar-dark">        
+        <a href="/main" class="navbar-brand">
+            <img src="../../assets/logo.svg" id="logo">
+            sKillz
+        </a>
+
+        <div *ngIf="user; else login" class="headLog">
+            <!-- <div class="headText">Tudo bom, {{ user.name }}? </div> -->
+            <button class="butConfg" (click)="config()"><img src="../../assets/icons/config.svg" id="logouti">  </button>
+            <button class="butLog" (click)="logout()"><img src="../../assets/icons/logout.svg" id="logouti">  </button>
+        </div>
+
+        <ng-template #login >
+            <span class="navbar-text" >
+                Por favor, faça o login!
+            </span>
+        </ng-template>
+    </nav>
+</header>

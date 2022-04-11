@@ -1,0 +1,39 @@
+.outside
+{
+    display: flex;
+    flex-direction: row;  
+    align-items: center; 
+    margin-bottom: 0.4rem;    
+}
+
+.forma
+{
+    display: flex;
+    flex-direction: row;  
+    width: 95%;
+    align-items: center; 
+}
+
+#bar
+{
+    width: 90%;
+    margin-left: .5rem;
+}
+
+.language
+{
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    color: #FFF ;
+    -webkit-text-stroke: 0.03rem #FFF; 
+    margin-left: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.percent
+{
+    font-family: 'Poiret One', sans-serif;
+    font-size: 0.8rem;
+    margin-left: 1.2rem;
+    margin-right: 0.5rem;
+}

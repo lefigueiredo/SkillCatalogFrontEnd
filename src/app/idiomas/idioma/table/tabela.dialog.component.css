@@ -1,0 +1,344 @@
+::ng-deep .ant-modal-content
+{
+    background-color: #272f33;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+::ng-deep .ant-modal-body 
+{
+    padding: 0px;
+}
+
+::ng-deep .ant-modal-header
+{    
+    background-color: #272f33;  
+    border-radius: 10px;
+    border: 1px solid #272f33;
+    ;
+}
+
+::ng-deep .ant-modal-title
+{
+    color: #FFF;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.5rem;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+}
+
+::ng-deep .ant-modal-footer 
+{
+    display: none;
+    background-color: #272f33;  
+    border-radius: 10px;
+    border: 1px solid #272f33;
+    padding: 10px;
+}
+
+::ng-deep .ant-btn-primary 
+{
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+    background: #1b8299;
+    border-color: #1b8299;
+    margin-bottom: 16px;
+}
+
+::ng-deep .ant-btn 
+{
+    font-family: 'Poiret One', sans-serif;
+}
+
+::ng-deep .ant-btn-primary:hover 
+{
+    color: #fff;
+    background: #19afd1;
+    border-color: #19afd1;
+}
+
+::ng-deep .ant-radio-button-wrapper:hover {
+    position: relative;
+    color: #1b8299;
+}
+
+::ng-deep .ant-radio-button-wrapper:last-child:hover {
+    position: relative;
+    color: #1b8299;
+}
+
+::ng-deep.ant-btn-primary[disabled], .ant-btn-primary[disabled]:active, .ant-btn-primary[disabled]:focus, .ant-btn-primary[disabled]:hover 
+{
+    color: rgba(0,0,0,.25);
+    background: #a0a0a0;
+    border-color: #a0a0a0;
+}
+
+/* FORM */
+
+.form
+{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;   
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+}
+
+::ng-deep .ant-popover-inner-content {
+    padding: 12px 16px;
+    color: rgba(0,0,0,.85);
+    white-space: pre-line;
+}
+
+::ng-deep label
+{
+    color: #FFF;
+    font-size: 1.1rem !important; 
+}
+
+/* Buttons radio */
+::ng-deep.ant-radio-button-wrapper:not(:first-child)::before 
+{
+    width: 0px;
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;   
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+}
+
+::ng-deep .ant-radio-button-wrapper:first-child
+{
+    border: 1px solid #56646b;
+    border-left: 1px solid #56646b;   
+    border-radius: 5px; 
+   
+}
+
+::ng-deep .ant-radio-button-wrapper:last-child
+{
+    border: 1px solid #56646b;
+    border-left: 1px solid #56646b;  
+    border-radius: 5px;   
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;   
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+}
+
+::ng-deep .ant-radio-button-wrapper 
+{
+    background:#4d5b63;
+    border: 1px solid #56646b;
+    border-left: 1px solid #56646b; 
+    margin-left: 10px;
+    border-radius: 5px; 
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;   
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+}
+
+::ng-deep .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: #fff;
+    background: #1b8299;
+    border-color: #242C2F;  
+}
+
+::ng-deep .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover 
+{
+    color: #fff;
+    background: #1b8299;
+    border-color: #333e42;
+}
+
+::ng-deep .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) 
+{
+    z-index: 1;
+    color: #333e42;
+    background: #fff;
+    border-color: #333e42;
+}
+
+::ng-deep .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child 
+{
+    border-color: #242C2F;
+}
+
+::ng-deep .ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child 
+{
+    border-right-color: #242C2F;
+}
+  
+::ng-deep .cdk-virtual-scroll-orientation-vertical
+{
+    overflow: auto;
+}
+
+::ng-deep path
+{
+    color: #fff;
+}
+
+/* Text info about radio buttons */
+.popover 
+{
+    white-space: pre-wrap;    
+}
+
+/* Scroolbar customize */
+::ng-deep ::-webkit-scrollbar 
+{
+    width: 0.625rem;
+    overflow-y: scroll;
+    background: rgb(180, 180, 180);
+    box-shadow: inset 0 0 4px #707070;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::ng-deep ::-webkit-scrollbar-thumb 
+{
+    background: #717f85;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* Tabela */
+.tabela
+{
+    margin:auto;
+    max-width: 90%;
+}
+
+/* Component title */
+#headerEdit
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#idiLogo
+{    
+    transform: scale(1.5);
+}
+
+#idiHeader
+{
+    font-size: 3rem;
+    font-family: 'Poiret One', sans-serif;
+    color: #136678;
+    -webkit-text-stroke: 0.09rem #1b8299;
+    margin-left: 1.2rem;
+}
+
+/* Add button */
+button
+{
+    background-color: #224e5e;
+    border: none;
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-box-shadow: 0 0 2px rgba(27, 27, 27, 0.5);
+    margin-left: 75%;
+}
+
+.butaozinho
+{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button:hover
+{
+    background-color: #1b8299;
+    transition: 0.1s;
+    transform: scale(1.05);
+}
+
+.formRadio
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.radioDiv
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.radioLabel
+{
+    margin-bottom: 5px;
+}
+
+.radioIconSvg
+{
+    transform: scale(2);
+    margin-top: 10px;
+    filter: invert(54%) sepia(63%) saturate(3112%) hue-rotate(158deg) brightness(91%) contrast(105%);
+}
+
+.radioIcon
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #42525a;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 10px; 
+}
+
+.radioIconTxt
+{
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+    margin-top: 20px;
+}
+
+.formDiv
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.formDivColumn
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Notification box */
+::ng-deep .ant-notification-close-icon /* Botão x da notificação*/
+{
+    filter: invert(54%) sepia(63%) saturate(3112%) hue-rotate(158deg) brightness(91%) contrast(105%);
+}
+
+::ng-deep .anticon-check-circle /* Icone de sucesso */
+{
+    filter: invert(54%) sepia(78%) saturate(2068%) hue-rotate(82deg) brightness(107%) contrast(121%);
+}
+
+::ng-deep .anticon-exclamation-circle /* Icone de erro */
+{
+    filter: invert(19%) sepia(70%) saturate(7236%) hue-rotate(356deg) brightness(107%) contrast(119%);
+}

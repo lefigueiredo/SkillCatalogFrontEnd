@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nivel</th>
+        <th scope="col">Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of allFuncIdiomas; let i=index">    
+            <td>{{i+1}}</td>
+            <td>{{item.nivel}}</td>
+            <td>{{item.nome}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<nz-table 
+    #sortTable 
+    [nzData]="allFuncIdiomas" 
+    nzSize="middle"
+    [nzFrontPagination]='false'>
+    <thead>
+        <tr>
+        <th *ngFor="let item of listOfColumn" >
+            {{ item }}
+        </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of allFuncIdiomas">
+        <td>{{ item.nivel}}</td>
+        <td>{{ item.nome }}</td>
+        </tr>
+    </tbody>
+</nz-table>
+
+
+

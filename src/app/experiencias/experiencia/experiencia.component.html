@@ -1,0 +1,42 @@
+<h4 class="text-center"> FORMAÇÃO!!</h4>
+
+<form [formGroup]="expForm"  class="form mt-4" novalidate (submit)="sendExperiencia()">
+    <label for="cars">Insira uma nova formação:</label>
+
+    <div class="form-group">
+        <input formControlName="titulo" placeholder="Titulo ex: Desenvolvedor" class="form-control" autofocus >
+    </div>    
+
+    <div class="form-group">
+        <input formControlName="empresa" placeholder="Empresa" class="form-control">
+    </div> 
+
+    <div class="form-group">
+        <input formControlName="data_inicio" placeholder="Data de Inicio" class="form-control">
+    </div> 
+
+    <div class="form-group">
+        <input formControlName="data_fim" placeholder="Data de Termino" class="form-control">
+    </div> 
+
+    <button [disabled]="expForm.invalid" class="btn btn-primary btn-block">Enviar</button>
+</form>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Empresa</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of allExperiencias; let i=index">    
+            <td>{{i+1}}</td>
+            <td>{{item.titulo}}</td>
+            <td>{{item.empresa}}</td>
+        </tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,82 @@
+<table mat-table [dataSource]="rowList" multiTemplateDataRows >
+    <ng-container  matColumnDef="{{col1}}">     
+      <th 
+        class="headSize" 
+        mat-header-cell 
+        *matHeaderCellDef 
+        mat-sort-header
+      >{{col1}}</th>
+      <td mat-cell *matCellDef="let element"> {{element.funcNome}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="{{col2}}">
+      <th class="headSize" mat-header-cell *matHeaderCellDef >{{col2}}</th>
+      <td mat-cell *matCellDef="let element" >{{element.funcCargo}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="{{col3}}">
+      <th class="iconCol" mat-header-cell *matHeaderCellDef></th>
+      <td class="iconCol" mat-cell *matCellDef="let element" (click)="cellClicked(element)"> 
+
+        <a><sc-regis-dialog 
+          rowFuncNome="{{rowFuncNome}}"
+          rowFuncCargo="{{rowFuncCargo}}"
+          rowFuncTime="{{rowFuncTime}}"
+          rowUserEmail="{{rowUserEmail}}"
+          rowUserNv="{{rowUserNv}}"
+          rowUserId="{{rowUserId}}"
+        > </sc-regis-dialog></a>
+  
+        <a><sc-regis-delete
+          id="{{rowUserId}}"
+          name="{{rowFuncNome}}"
+        > </sc-regis-delete></a>  
+      </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="colList.length">
+        <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+         
+          <div class="expande">
+              <div class="expandDiagramInst">
+                  <div class="expandeIcon">
+                      <img id="expandeIconSvg" src="../../assets/icons/reg-team.svg"> 
+                  </div>
+                  <div id="expandeLvl"> {{element.funcTime}} </div>                       
+              </div>
+              <div id="expandeNome"> {{type1}} </div> 
+          </div>
+  
+          <div class="expande">
+            <div class="expandDiagram">
+                <div class="expandeIcon"> 
+                    <img id="expandeIconSvg" src="../../assets/icons/reg-user.svg"> 
+                </div>
+                <div id="expandeLvl"> {{element.tipo_display}} </div>                       
+            </div>
+            <div id="expandeNome"> {{type2}} </div> 
+          </div>
+  
+          <div class="expande">
+            <div class="expandDiagram">
+                <div class="expandeIcon"> 
+                    <img id="expandeIconSvg" src="../../assets/icons/reg-mail.svg"> 
+                </div>
+                <div id="expandeLvl"> {{element.usuarioEmail}} </div>                       
+            </div>
+            <div id="expandeNome"> {{type3}} </div> 
+          </div>
+      
+        </div>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="colList"></tr>
+    <tr mat-row *matRowDef="let element; columns: colList;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>

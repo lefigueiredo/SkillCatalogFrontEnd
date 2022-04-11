@@ -1,0 +1,135 @@
+<html>
+    
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+    <body>   
+        <div class="container">
+            <div id="headerEdit">
+                <img id="idiLogo" src="../../assets/icons/sea.svg">
+                <div id="idiHeader">PESQUISAR</div>            
+            </div>
+
+            <div class="gutter-example">          
+                <div nz-row [nzGutter]="[16, 16]">
+                    <div nz-col class="gutter-row" [nzSpan]="24">
+                        <div class="grid-l3-1">
+                            <main-box-title formTitle="Pesquisando"></main-box-title>
+                            <div class="outTable">
+
+                                <p-table 
+                                    #dt1
+                                    [value]="allSearch" 
+                                    dataKey="NomeFuncionario" 
+                                    responsiveLayout="scroll"
+                                    rowExpandMode="single"
+                                    [globalFilterFields]="['NomeFuncionario','Cargo','Time','Idiomas','Formacoes','Proficiencias']"
+                                >
+                                    <ng-template pTemplate="caption">
+                                        <div class="p-d-flex">
+                                            <button pButton label="Limpar" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                                            <span class="p-input-icon-right p-ml-auto">
+                                                <i class="pi pi-search"></i>
+                                                <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Pesquisar" />
+                                            </span>
+                                        </div>
+                                    </ng-template>
+
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th style="width: 3rem"></th>
+                                            <th pSortableColumn="NomeFuncionario">Nome <p-sortIcon field="nomeFuncionario"></p-sortIcon></th>                               
+                                            <th pSortableColumn="Cargo">Cargo <p-sortIcon field="cargo"></p-sortIcon></th>
+                                            <th pSortableColumn="Time">Time <p-sortIcon field="time"></p-sortIcon></th>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template pTemplate="body" let-search let-expanded="expanded">
+                                        <tr>
+                                            <td>
+                                                <button type="button" pButton pRipple [pRowToggler]="search" (click)="cellClicked(search.Informacoes)" 
+                                                    class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-up'"
+                                                >
+                                                    <img class="butImg" src="../../../assets/icons/plus.svg" />
+                                                </button>
+                                            </td>
+                                            <td>{{search.NomeFuncionario}}</td>
+                                            <td>{{search.Cargo }}</td>
+                                            <td>{{search.Time}}</td>            
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template pTemplate="rowexpansion" let-search>
+                                        <tr>
+                                            <td colspan="7">
+                                                <div class="p-p-3">
+                                                    <p-table [value]="search.Informacoes" dataKey="Idiomas">
+                                                        
+                                                        <ng-template pTemplate="header">
+                                                            <tr>
+                                                                <th  style="width:5%;" class="profileHeadPIc">  </th>
+                                                                <th class="expandHead">Idiomas </th>
+                                                                <th class="expandHead">Formacoes </th>
+                                                                <th class="expandHead">Proficiencias </th>
+                                                            </tr>
+                                                        </ng-template>
+
+                                                        <ng-template pTemplate="body">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="profileDiv">
+                                                                        <div class="tdDivStyleImg" >
+                                                                            <img class="profilePic" src="{{listaImg}}">
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td>
+                                                                    <div class="tdStyle">
+                                                                        <div class="tdDivStyle" *ngFor="let item of listaIdiomas; let i = index"
+                                                                            pTooltip="{{listaIdiomasNv[i]}} %" tooltipPosition="top" placeholder="Top"
+                                                                        >{{item}}</div>
+                                                                    </div>
+                                                                </td>
+
+
+                                                                <td >
+                                                                    <div class="tdStyle">
+                                                                        <div class="tdDivStyle" *ngFor="let item of listaFormacoes; let i = index"
+                                                                            pTooltip="Ano de conclusão: {{listaFormacoesInf[i]}}" tooltipPosition="top" placeholder="Top"
+                                                                        >{{item}}</div>
+                                                                    </div>
+                                                                </td>
+
+
+                                                                <td>
+                                                                    <div class="tdStyle">
+                                                                        <div class="tdDivStyle" *ngFor="let item of listaProficiencias; let i = index"
+                                                                            pTooltip="{{listaProficienciasNv[i]}} %" tooltipPosition="top" placeholder="Top"
+                                                                        >{{item}}</div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </ng-template>
+
+                                                        <ng-template pTemplate="emptymessage">
+                                                            <tr>
+                                                                <td colspan="6">Esse funcionário ainda não preencheu as informações.</td>
+                                                            </tr>
+                                                        </ng-template>
+
+                                                    </p-table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>
+                            
+
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

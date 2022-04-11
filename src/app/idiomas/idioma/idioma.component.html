@@ -1,0 +1,195 @@
+<html>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+<body>
+    <div class="container">
+        <div id="headerEdit">
+            <img id="idiLogo" src="../../assets/icons/idi-head.svg">
+            <div id="idiHeader">IDIOMAS</div>            
+        </div>
+
+        <div class="gutter-example">          
+            <div nz-row [nzGutter]="[16, 16]"> <!-- Distancia em pixel dos cards -->
+
+            <div nz-col class="gutter-row" [nzSpan]="10">
+                <div class="grid-l3-1">
+                    <main-box-title formTitle="Adicionar Idiomas"></main-box-title>
+                    <div class="form">
+                        <form nz-form [nzLayout]="'vertical'" [formGroup]="idiomaForm" (ngSubmit)="sendIdioma()">
+                            <nz-select
+                                [nzBorderless]="false"
+                                formControlName="idioma"
+                                nzPlaceHolder="Idiomas"
+                            >
+                                <nz-option *ngFor="let idi of allIdiomas" 
+                                    [nzValue]="idi.id" [nzLabel]="idi.nome">
+                                </nz-option>                                   
+                            </nz-select>   
+
+                            <nz-form-item class="radioButIdi">
+                                <nz-form-label [nzSpan]="6" >Escrita:</nz-form-label>
+                                <nz-form-control >
+                                    <nz-radio-group [(ngModel)]="radioValueW" nzButtonStyle="solid" formControlName="escrita">
+                                        <label 
+                                            nz-radio-button nzValue=0.2 
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent= {{escIni}}
+                                        >Iniciante</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.5
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent= {{escInt}}
+                                        >Intermediario</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.8
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent= {{escAva}}
+                                        >Avançado</label>
+                                        <label 
+                                            nz-radio-button nzValue=1
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent= {{escFlu}}
+                                        >Fluente</label>
+                                    </nz-radio-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                            
+                            <nz-form-item>
+                                <nz-form-label [nzSpan]="6" >Leitura:</nz-form-label>
+                                <nz-form-control >
+                                    <nz-radio-group [(ngModel)]="radioValueR" nzButtonStyle="solid" formControlName="leitura">
+                                        <label 
+                                            nz-radio-button nzValue=0.2                                   
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{leiIni}}
+                                        >Iniciante</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.5
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{leiInt}}
+                                        >Intermediario</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.8
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{leiFlu}}
+                                        >Avançado</label>
+                                        <label 
+                                            nz-radio-button nzValue=1
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{leiAva}}
+                                        >Fluente</label>
+                                    </nz-radio-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        
+                            <nz-form-item>
+                                <nz-form-label [nzSpan]="6" >Audição:</nz-form-label>
+                                <nz-form-control >
+                                    <nz-radio-group [(ngModel)]="radioValueL" nzButtonStyle="solid" formControlName="audicao">
+                                        <label 
+                                            nz-radio-button nzValue=0.2
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{audIni}}
+                                        >Iniciante</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.5
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{audInt}}
+                                        >Intermediario</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.8
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{audAva}}
+                                        >Avançado</label>
+                                        <label 
+                                            nz-radio-button nzValue=1
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{audFlu}}
+                                        >Fluente</label>
+                                    </nz-radio-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                        
+                            <nz-form-item>
+                                <nz-form-label [nzSpan]="6">Fala:</nz-form-label>
+                                <nz-form-control >
+                                    <nz-radio-group [(ngModel)]="radioValueS" nzButtonStyle="solid" formControlName="fala">
+                                        <label 
+                                            nz-radio-button nzValue=0.2
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{falIni}}
+                                        >Iniciante</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.5
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{falInt}}
+                                        >Intermediario</label>
+                                        <label 
+                                            nz-radio-button nzValue=0.8
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{falAva}}
+                                        >Avançado</label>
+                                        <label 
+                                            nz-radio-button nzValue=1
+                                            nz-popover nzPopoverPlacement="topRight" data-html="true"
+                                            nzPopoverContent={{falFlu}}
+                                        >Fluente</label>
+                                    </nz-radio-group>
+                                </nz-form-control>
+                            </nz-form-item>
+
+                            <div class="ButtonMsgDiv"> 
+                                <button nz-button nzType="primary" [disabled]="!idiomaForm.valid">
+                                    <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+                                    <div id="plusTxt">Adicionar</div>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div nz-col class="gutter-row" [nzSpan]="10">
+                <div class="grid-l3-1" >
+                    <main-box-title formTitle="Meus Idiomas"></main-box-title>
+                    <div class="tabela">
+                    <sc-table
+                    [colList]="listOfColumn"
+                    [rowList]="allFuncIdiomas"
+                    [skillTypes]="listOfType"
+                    >
+                    </sc-table>
+                    </div>
+                </div>
+            </div>   
+
+            <div *ngIf="userNv" nz-col class="gutter-row" [nzSpan]="8">
+                <div class="grid-l2-1" >
+                    <main-box-title formTitle="Inserir novos Idiomas"></main-box-title>
+                    <div class="tabela">
+                    <sc-idioma-new>
+                    </sc-idioma-new>
+                    </div>
+                </div>
+            </div>
+
+            <div nz-col class="gutter-row" [nzSpan]="8">
+                <div class="grid-l5-1">
+                    <main-box-title formTitle="Meus Idiomas na Empresa"></main-box-title>
+                    <div class="tabela1" [style.display]="idiomaClicked ? 'block' : 'none'">
+                        <sc-radar-idioma></sc-radar-idioma>
+                    </div>
+                    <div *ngIf="!idiomaClicked" class='textograf'>
+                        Clique em um idioma para ver o comparativo
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

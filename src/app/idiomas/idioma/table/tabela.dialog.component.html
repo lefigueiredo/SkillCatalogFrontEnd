@@ -1,0 +1,174 @@
+<img src="../../assets/icons/edit.svg" (click)="showModal()">
+
+<nz-modal 
+  [(nzVisible)]="isVisible" 
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  [nzTitle]="modalTitle"
+  [nzContent]="modalContent"
+  [nzFooter]="modalFooter" 
+>
+
+    <ng-template #modalTitle>Editando Idioma {{rowItemId}}</ng-template>
+    
+    <ng-template #modalContent>
+    
+    <form nz-form [nzLayout]="'vertical'" [formGroup]="customForm">
+        <div class="formDiv">
+            <div class="formDivColumn">
+                <div>
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="6" ></nz-form-label>
+                        <nz-form-control >
+                            <div class="formRadio">
+                                <div class="radioIcon">
+                                    <img class="radioIconSvg" src="../../assets/icons/reading.svg">
+                                    <p class="radioIconTxt">LEITURA</p>
+                                </div>         
+                
+                                <div class="radioDiv">
+                                    <nz-radio-group 
+                                    [(ngModel)]="rowLeitura" 
+                                    nzButtonStyle="solid" 
+                                    formControlName="leitura"
+                                    nzSize="small"
+                                    >
+                                        <label class="radioLabel"
+                                            nz-radio-button nzValue=0.2 
+                                        >Iniciante</label><br>
+                                        <label class="radioLabel"
+                                            nz-radio-button nzValue=0.5
+                                        >Intermediario</label><br>
+                                        <label class="radioLabel"
+                                            nz-radio-button nzValue=0.8
+                                        >Avançado</label><br>
+                                        <label 
+                                            nz-radio-button nzValue=1
+                                        >Fluente</label>
+                                    </nz-radio-group>
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                  
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="6" ></nz-form-label>
+                        <nz-form-control>
+                            <div class="formRadio">
+                                <div class="radioIcon">
+                                    <img class="radioIconSvg" src="../../assets/icons/writing.svg">
+                                    <p class="radioIconTxt">ESCRITA</p>
+                                </div>         
+                
+                                <div class="radioDiv">
+                                    <nz-radio-group 
+                                    [(ngModel)]="rowEscrita" 
+                                    nzButtonStyle="solid" 
+                                    formControlName="escrita"
+                                    nzSize="small"
+                                    >
+                                        <label class="radioLabel"
+                                            nz-radio-button nzValue=0.2 
+                                        >Iniciante</label><br>
+                                        <label class="radioLabel"
+                                            nz-radio-button nzValue=0.5
+                                        >Intermediario</label><br>
+                                        <label class="radioLabel"
+                                            nz-radio-button nzValue=0.8
+                                        >Avançado</label><br>
+                                        <label 
+                                            nz-radio-button nzValue=1
+                                        >Fluente</label>
+                                    </nz-radio-group>
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div> 
+          
+            <div class="formDivColumn">
+                <div>
+                    <nz-form-item>
+                      <nz-form-label [nzSpan]="6" ></nz-form-label>
+                      <nz-form-control >
+                            <div class="formRadio">
+                                <div class="radioIcon">
+                                    <img class="radioIconSvg" src="../../assets/icons/listening.svg">
+                                    <p class="radioIconTxt">AUDIÇÃO</p>
+                                </div>         
+                
+                                <div class="radioDiv">
+                                        <nz-radio-group 
+                                        [(ngModel)]="rowAudicao" 
+                                        nzButtonStyle="solid" 
+                                        formControlName="audicao"
+                                        nzSize="small"
+                                        >
+                                            <label class="radioLabel"
+                                                nz-radio-button nzValue=0.2 
+                                            >Iniciante</label><br>
+                                            <label class="radioLabel"
+                                                nz-radio-button nzValue=0.5
+                                            >Intermediario</label><br>
+                                            <label class="radioLabel"
+                                                nz-radio-button nzValue=0.8
+                                            >Avançado</label><br>
+                                            <label 
+                                                nz-radio-button nzValue=1
+                                            >Fluente</label>
+                                    </nz-radio-group>
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                  
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="6" ></nz-form-label>
+                        <nz-form-control >
+                          <div class="formRadio">
+                              <div class="radioIcon">
+                                  <img class="radioIconSvg" src="../../assets/icons/speaking.svg">
+                                  <p class="radioIconTxt">FALA</p>
+                              </div>         
+              
+                                <div class="radioDiv">
+                                        <nz-radio-group 
+                                        [(ngModel)]="rowFala" 
+                                        nzButtonStyle="solid" 
+                                        formControlName="fala"
+                                        nzSize="small"
+                                        >
+                                            <label class="radioLabel"
+                                                nz-radio-button nzValue=0.2 
+                                            >Iniciante</label><br>
+                                            <label class="radioLabel"
+                                                nz-radio-button nzValue=0.5
+                                            >Intermediario</label><br>
+                                            <label class="radioLabel"
+                                                nz-radio-button nzValue=0.8
+                                            >Avançado</label><br>
+                                            <label 
+                                                nz-radio-button nzValue=1
+                                            >Fluente</label>
+                                    </nz-radio-group>
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </div>
+
+        <nz-form-control>      
+            <button nz-button nzType="primary" [disabled]="!customForm.valid" (click)="updateItem()" type="submit">
+                <div>Atualizar</div>
+            </button>
+        </nz-form-control>
+    </form>
+  </ng-template>
+
+  <ng-template #modalFooter>
+  </ng-template>    
+    
+</nz-modal>

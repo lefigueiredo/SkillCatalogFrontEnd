@@ -1,0 +1,67 @@
+#bg
+{
+    background-color: #334047;
+    z-index: 200;
+}
+
+#logo
+{
+    margin-left: 1.5rem;
+    width: 25%;
+}
+
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #242C2F;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.butLog
+{
+    background-color: #242C2F;
+    border-radius: 10px;
+    border: 1px solid #242C2F;
+    width: 40px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+}
+
+.headLog
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logouti
+{
+    transform: scale(0.9);
+    margin: auto;
+}
+
+.headText
+{
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;    
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+    margin-right: 10px;
+}
+
+.butConfg
+{
+    background-color: #242C2F;
+    border-radius: 10px;
+    border: 1px solid #242C2F;
+    width: 40px;
+    padding-bottom: 5px;
+    margin-right: 10px;
+}
+
+.navbar-text
+{
+    margin-right: 10px;
+}
+

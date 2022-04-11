@@ -1,0 +1,138 @@
+body
+{
+    background-color: #242C2F;
+}
+
+.grid-l1-4
+{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    height: 7.5rem;       
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: 'Poiret One', sans-serif;
+    background: #334047;
+    border-radius: 10px;   
+}
+
+.grid-l1-1
+{    
+    height: 18.75rem;       
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: 'Poiret One', sans-serif;
+    background: #334047;
+    border-radius: 10px;   
+}
+
+.grid-l1-type 
+{
+    color: #FFF;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+    font-size: 1.2rem;
+    margin-top: -1.3rem;
+}
+
+#grid-l1-time4
+{
+    color: rgb(236, 128, 200);
+    -webkit-text-stroke: 0.1rem rgb(236, 128, 200); 
+}
+
+#cert
+{
+    margin-top: 0.7em;    
+}
+
+#grid-l1-time3
+{
+    color: rgb(110, 224, 129);
+    -webkit-text-stroke: 0.1rem rgb(110, 224, 129);
+}
+
+#grid-l1-time2
+{
+    color: rgb(251, 234, 94);
+    -webkit-text-stroke: 0.1rem rgb(251, 234, 94);
+}
+
+#grid-l1-time1
+{
+    color: rgb(236, 134, 75);
+    -webkit-text-stroke: 0.1rem rgb(236, 134, 75); 
+}
+
+.grid-l2-1 
+{
+    height: 150px;
+    background: #334047;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.grid-l3-1
+{
+    height: 220px;
+    background: #334047;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.grid-config3 
+{
+    height: 180px;
+    font-size: 14px;
+    line-height: 120px;
+    background: #334047;
+    border-radius: 10px;
+}
+
+.container
+{
+    padding: 10px;
+}
+
+::-webkit-scrollbar 
+{
+    width: 0.625rem;
+    overflow-y: scroll;
+    background: rgb(124, 124, 124);
+    box-shadow: inset 0 0 4px #707070;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb 
+{
+    background: #2e393d;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.grid-l1-1 > .capa 
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.grid-l1-1 > .capaNome
+{ 
+    position:absolute; 
+    right:5px;
+    bottom:7px; 
+    background: #242C2F;
+    border-radius: 14px;
+    color: #FFF;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+    padding: 0.625rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.occu
+{
+    font-size: 1rem;
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+    text-align: center;
+}

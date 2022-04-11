@@ -1,0 +1,142 @@
+.form-control
+{
+    font-family: 'Poiret One', sans-serif;    
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+}
+
+.form-control {
+    color:  #acabab;
+    -webkit-text-stroke: 0.03rem #acabab;
+    width: 250px;
+    background-color: #56646b;
+    background-clip: padding-box;
+    border-width: 0px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.formDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #224e5e;
+    border-color: #224e5e;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b8299;
+    border-color: #1b8299;
+}
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #179cb9;
+    border-color: #179cb9;
+    box-shadow: 0 0 0 0rem rgb(49 132 253 / 50%);
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #6c7980;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(54 123 149 / 30%);
+}
+
+#expandeIconSvg
+{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.mobileDiv
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #6c7980;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    font-family: 'Poiret One', sans-serif;    
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+}
+
+.texto
+{
+    text-align: center;
+}
+
+.imgmob
+{
+    margin-top: 20%;
+    opacity: 0.6;
+    margin-left: 40%;
+    margin-bottom: 30px;
+}
+
+.botaoResetaSenha {
+    margin: auto;
+    display: block;
+}
+
+::ng-deep .ant-modal-header
+{    
+    background-color: #272f33;  
+    border-radius: 10px;
+    border: 1px solid #272f33;
+}
+
+::ng-deep .ant-modal-content
+{
+    background-color: #272f33;
+    border-radius: 10px;
+    padding: 0px;    
+}
+
+::ng-deep .ant-modal-footer 
+{
+    display: none;
+    background-color: #272f33;  
+    border-radius: 10px;
+    border: 1px solid #272f33;
+    padding: 10px;
+}
+
+::ng-deep .ant-modal-title
+{
+    color: #FFF;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.5rem;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+}
+
+::ng-deep .anticon 
+{
+    color: #fff;
+}
+
+.esqueci
+{    
+    font-family: 'Poiret One', sans-serif;    
+    font-size: 0.9rem;
+    -webkit-text-stroke: 0.02rem rgb(167, 167, 167);
+    margin-top: 10px;
+}
+
+::ng-deep .ant-notification-close-icon /* Botão x da notificação*/
+{
+    filter: invert(54%) sepia(63%) saturate(3112%) hue-rotate(158deg) brightness(91%) contrast(105%);
+}

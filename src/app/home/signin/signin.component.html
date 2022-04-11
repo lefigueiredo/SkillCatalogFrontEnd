@@ -1,0 +1,61 @@
+<div>
+    <form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
+        <div class="formDiv">
+
+            <img id="expandeIconSvg" src="../assets/log.svg">
+
+            <div class="form-group">
+                <input #userNameInput formControlName="userName" class="form-control" placeholder="Email" autofocus>
+                <div
+                    *ngIf="loginForm.get('userName')?.invalid && (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched)">
+                    <sc-vmessage *ngIf="loginForm.get('userName')?.errors?.required" text="O usuário é obrigatório!">
+                    </sc-vmessage>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input formControlName="psw" type="password" class="form-control" placeholder="Senha">
+                <div
+                    *ngIf="loginForm.get('psw')?.invalid && (loginForm.get('psw')?.dirty || loginForm.get('psw')?.touched)">
+                    <sc-vmessage *ngIf="loginForm.get('psw')?.errors?.required" text="A senha é obrigatória!">
+                    </sc-vmessage>
+                </div>
+            </div>
+
+            <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">Login</button>
+            <span class="esqueci"><a (click)="showModal()">Esqueci minha senha</a></span>
+        </div>
+    </form>
+
+    <nz-modal class="modalSenha" [(nzVisible)]="dialogPwdVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+        [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter" nzWidth="15vw" nzCentered>
+
+        <ng-template #modalTitle>Esqueci minha senha</ng-template>
+
+        <ng-template #modalContent>
+
+            <form nz-form [nzLayout]="'vertical'" [formGroup]="customForm">
+                <div class="formDialog">
+                    <nz-form-item class="insideForm">
+                        <nz-form-control>
+                            <nz-form-control [nzSm]="32" [nzXs]="36" nzErrorTip="Por favor insira o seu email!">
+                                <input nz-input id="email" formControlName="email" placeholder="Email" class="form-control"/>
+                            </nz-form-control>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-control>
+                        <button class="botaoResetaSenha btn btn-primary btn-block" nz-button nzType="primary" [disabled]="!customForm.valid"
+                            (click)="resetPassword()" type="submit">
+                            <div>Resetar</div>
+                        </button>
+                    </nz-form-control>
+                </div>
+            </form>
+        </ng-template>
+
+        <ng-template #modalFooter>
+        </ng-template>
+
+    </nz-modal>
+</div>

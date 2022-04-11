@@ -1,0 +1,99 @@
+<html *ngIf="userNv"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+    <body>   
+        <div class="container">
+            <div id="headerEdit">
+                <img id="idiLogo" src="../../assets/icons/func-head.svg">
+                <div id="idiHeader">FUNCIONÁRIOS</div>            
+            </div>
+
+            <div class="gutter-example">          
+                <div nz-row [nzGutter]="[16, 16]"> <!-- Distancia em pixel dos cards -->
+
+                    <div nz-col class="gutter-row" [nzSpan]="10">
+                        <div class="grid-l3-1">
+                            <main-box-title formTitle="Adicionar Funcionário"></main-box-title>
+                            
+                            <form class="formin" nz-form [formGroup]="userForm" (ngSubmit)="sendFormacao()">
+                                <nz-form-item>
+                                    <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="userName" nzRequired [nzNoColon]="true"></nz-form-label>
+                                    <nz-form-control [nzSm]="16" [nzXs]="24" nzErrorTip="Por favor insira o nome!">
+                                        <input nz-input id="userName" formControlName="userName" placeholder="Nome do funcionário"/>
+                                    </nz-form-control>
+                                </nz-form-item>  
+
+                                <nz-form-item>
+                                    <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="userEmail" nzRequired [nzNoColon]="true"></nz-form-label>
+                                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira o Email!">
+                                        <input nz-input id="userEmail" formControlName="userEmail" placeholder="Email do funcionário" />
+                                    </nz-form-control>
+                                </nz-form-item>  
+
+                                <nz-form-item>
+                                    <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="userOccupation" nzRequired [nzNoColon]="true"></nz-form-label>
+                                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira a função!">
+                                        <input nz-input id="userOccupation" formControlName="userOccupation" placeholder="Função do funcionário ex: Estagiário" />
+                                    </nz-form-control>
+                                </nz-form-item>  
+
+                                <nz-form-item>
+                                    <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="userTeam" nzRequired [nzNoColon]="true"></nz-form-label>
+                                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira o Time!">
+                                        <input nz-input id="userTeam" formControlName="userTeam" placeholder="Time do funcionário ex: Tecnologia" />
+                                    </nz-form-control>
+                                </nz-form-item>  
+
+                                <nz-form-item class="NewFuncform">
+                                    <nz-form-label [nzSpan]="6" >Tipo de usuário</nz-form-label>
+                                    <nz-form-control >
+                                        <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="solid" formControlName="userType">
+                                            <label 
+                                                nz-radio-button nzValue='admin' 
+                                            >Administrador</label>
+
+                                            <label 
+                                                nz-radio-button nzValue='usuario' 
+                                            >Usuário</label>
+
+                                            <label 
+                                                nz-radio-button nzValue='rh' 
+                                            >RH</label>
+                                            
+                                        </nz-radio-group>
+                                    </nz-form-control>
+                                </nz-form-item>  
+
+                                <nz-form-item nz-row class="register-area">
+                                    <nz-form-control [nzSpan]="14" [nzOffset]="2">
+                                        <button nz-button nzType="primary" [disabled]="!userForm.valid">
+                                        <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+                                        <div id="plusTxt">Adicionar</div>
+                                    </button>
+                                    </nz-form-control>
+                                </nz-form-item>
+
+                            </form>
+
+                        </div>                
+                    </div>
+                    
+                    <div nz-col class="gutter-row" [nzSpan]="10">
+                        <div class="grid-l3-1" >
+                            <main-box-title formTitle="Todos Funcionários"></main-box-title>
+                            <div class="tabela">   
+                                <sc-table-regis
+                                    [colList]="listOfColumn"
+                                    [rowList]="allRegistros"
+                                    [skillTypes]="listOfType"
+                                >
+                                </sc-table-regis>                
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

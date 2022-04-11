@@ -1,0 +1,17 @@
+<form class="newIdioma" nz-form [formGroup]="idiomaForm" (ngSubmit)="sendIdioma()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="idioma" [nzNoColon]="true"></nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24" nzErrorTip="Por favor insira um idioma!">
+            <input nz-input id="idioma" formControlName="nome" placeholder="Novo idioma"/>
+        </nz-form-control>
+    </nz-form-item>    
+    
+    <nz-form-item nz-row class="idiomaNewBut">
+        <nz-form-control [nzSpan]="14" [nzOffset]="2">
+            <button nz-button nzType="primary" [disabled]="!idiomaForm.valid">
+            <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+            <div id="plusTxt">Adicionar</div>
+        </button>
+        </nz-form-control>
+        </nz-form-item>
+</form>

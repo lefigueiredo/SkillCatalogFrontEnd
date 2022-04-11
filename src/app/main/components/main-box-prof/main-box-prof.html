@@ -1,0 +1,13 @@
+<div class='outside'>
+    <div class="forma">
+        <div class="language">{{ formNome }}</div>
+        <nz-progress 
+        id="bar" 
+        nzType="line" 
+        [nzPercent]="formNv" 
+        nzStatus="active"
+        [nzShowInfo]="false"
+        [nzStrokeColor]="{ '0%': barColor, '100%': barColor }"></nz-progress>
+        <div class="percent" [ngStyle]="{'color':barColor, '-webkit-text-stroke':'0.03rem'+barColor}">{{ formNv }}%</div>
+    </div>    
+</div>

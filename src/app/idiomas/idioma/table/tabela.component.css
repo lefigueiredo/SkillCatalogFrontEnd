@@ -1,0 +1,137 @@
+table 
+{
+    font-family: 'Poiret One', sans-serif;
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;  
+    border-collapse:separate; 
+    border-spacing: 0 10px; 
+    background-color: #334047; 
+}
+
+tr.example-element-row:not(.example-expanded-row):hover 
+{
+    background-color: #5e6c72;
+    transition: 0.4s;
+}
+
+tr.example-element-row:not(.example-expanded-row):active 
+{
+    background: #efefef;
+}
+
+.example-element-detail 
+{
+    overflow: hidden;
+    display: flex;
+    background-color: #272f33;
+}
+
+tr.example-element-row /* Rows color */
+{
+    background-color: #272f33;    
+}
+
+tr.example-detail-row /* Row space between rows */
+{
+    height: 5px;    
+    background-color: #334047;
+}
+
+.ng-star-inserted /* Row text color */
+{
+    color: #FFF;
+    font-size: 0.9rem;
+    -webkit-text-stroke: 0.01rem #FFF;
+}
+
+.headSize
+{
+    font-size: 1rem;
+    -webkit-text-stroke: 0.03rem #FFF;
+}
+
+.iconCol
+{
+    -webkit-text-stroke: 0.03rem #334047;
+    color: #334047;
+    max-width: 30px;
+    padding-right: 0px;
+    margin-right: 4px;
+}
+
+.tabIcon
+{
+    margin-left: 4px;
+}
+  
+/* Expandable table section */
+.expande
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #334047; 
+    width: 100%;   
+}
+
+.expandDiagram 
+{    
+    min-width: 105px;
+    font-size: 0.8rem;
+    padding: 8px;
+    margin: 8px 0;
+    height: 104px; 
+    background-color: #272f33;
+    border-radius: 10px;   
+    -webkit-text-stroke: 0.01rem #FFF;
+    border: 3px solid #334047;
+}
+  
+.expandeIcon
+{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+ 
+#expandeIconSvg
+{
+    width: 50%;
+    margin-bottom: 4px;
+    opacity: 50%;    
+}
+
+#expandeLvl
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#expandeNome
+{
+    margin-top: -3px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: 0.01rem #FFF;
+    font-size: 0.8rem;
+}
+
+.expande:hover
+{    
+    transform: scale(1.1);
+    transition: 0.2s
+}
+
+.expande:hover #expandeIconSvg
+{
+    filter: invert(54%) sepia(63%) saturate(3112%) hue-rotate(158deg) brightness(91%) contrast(105%);
+}
+
+.expande:hover #expandeNome
+{
+    filter: invert(54%) sepia(63%) saturate(3112%) hue-rotate(158deg) brightness(91%) contrast(105%);
+}

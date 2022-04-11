@@ -1,0 +1,246 @@
+body
+{
+    background-color: #242C2F;
+}
+
+.title 
+{
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;    
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+/* Grids layout */
+.grid-l3-1
+{
+    height: 500px;
+    background: #334047;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.outTable
+{
+    padding: 10px 30px;
+}
+
+/* Scroolbar customize */
+::ng-deep ::-webkit-scrollbar 
+{
+    width: 0.625rem;
+    overflow-y: scroll;
+    background: rgb(180, 180, 180);
+    box-shadow: inset 0 0 4px #707070;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::ng-deep ::-webkit-scrollbar-thumb 
+{
+    background: #717f85;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* Component title */
+#headerEdit
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#idiLogo
+{    
+    transform: scale(1.5);
+}
+
+#idiHeader
+{
+    font-size: 3rem;
+    font-family: 'Poiret One', sans-serif;
+    color: #EC864B;
+    -webkit-text-stroke: 0.09rem #EC864B;
+    margin-left: 1.2rem;
+}
+
+/* Search Input */
+.p-d-flex
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.p-button-outlined
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Poiret One', sans-serif;
+    -webkit-text-stroke: 0.03rem #FFF;
+    background-color: #EC864B;
+    border-radius: 5px;
+    border: 0;
+}
+
+.p-button-outlined:hover
+{
+    background-color: #ff5e00;
+}
+
+input
+{
+    background-color: #56646b;
+    border-radius: 6px;
+    border-width: 0px;
+    padding: 4px;
+    border: 1px solid #5f6d75;
+    width: 300px;
+}
+
+::placeholder
+{
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.05rem;
+}
+
+input:focus
+{
+    outline: none !important;
+    border:1px solid #EC864B;
+    box-shadow: 0 0 0px #719ECE;
+}
+
+
+/* Table */
+.p-sortable-column /* HEADER */
+{
+    font-family: 'Poiret One', sans-serif;
+    -webkit-text-stroke: 0.02rem #FFF;
+    color: #FFF;
+}
+
+.p-element
+{
+    font-family: 'Poiret One', sans-serif;
+    -webkit-text-stroke: 0.01rem #FFF;
+    color: #FFF;
+}
+
+td
+{
+    background-color: #272f33;  
+    padding: 8px;
+}
+
+tr
+{
+    background-color: #334047;
+    -webkit-text-stroke: 0.01rem #FFF;
+}
+
+.p-button-icon-only
+{
+    background-color: #272f33; 
+    border-radius: 5px;
+    border: 0;
+}
+
+.butImg
+{
+    filter: brightness(0) saturate(100%) invert(58%) sepia(57%) saturate(635%) hue-rotate(332deg) brightness(99%) contrast(88%);
+}
+
+/* Table expand */
+::ng-deep .expandHead:first-child
+{
+    text-align: center;
+    border-radius: 6px 0px 0px 6px;
+}
+
+::ng-deep .expandHead:last-child
+{
+    text-align: center;
+    border-radius: 0px 6px 6px 0px;
+}
+
+::ng-deep .expandHead
+{
+    text-align: center;
+}
+
+.tdStyle
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #334047; 
+    text-align: center;       
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.tdDivStyle
+{
+    background-color: #EC864B;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 300px;
+}
+
+.tdDivStyle:hover
+{
+    background-color: #EC864B;
+    transform: scale(1.1);
+}
+
+/* Tooltip balaozinho */
+::ng-deep .p-tooltip {
+    background-color: #ff5e00;
+    border-radius: 10px;
+    font-family: 'Poiret One', sans-serif;
+    -webkit-text-stroke: 0.02rem #FFF;
+    color: #fff;
+}
+
+::ng-deep .p-tooltip-text {
+    padding: 0px 5px;
+    font-size: 0.8rem;
+}
+
+::ng-deep .p-tooltip-arrow {
+    border-top-color: #FFF; 
+}
+
+/* Imagem */
+
+.profileDiv
+{
+    background-color: #334047; 
+    text-align: center;       
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 90px;
+}
+
+.profilePic
+{
+    max-width: 70px;
+    width:auto;
+    margin:auto;
+    border-radius: 10px;
+}
+
+.tdDivStyleImg
+{
+    background-color: #334047; 
+    border-radius: 5px;
+}
+
+.profileHeadPIc
+{
+    max-width: 90px;
+}
+

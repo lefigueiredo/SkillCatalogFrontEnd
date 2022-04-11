@@ -1,0 +1,77 @@
+<html>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <body>
+    <div class="container">
+      <div id="headerEdit">
+        <img id="idiLogo" src="../../assets/icons/config.svg">
+        <div id="idiHeader">CONFIGURAÇÃO</div>            
+      </div>
+
+      <div class="gutter-example">          
+        <div nz-row [nzGutter]="[16, 16]"> <!-- Distancia em pixel dos cards -->
+
+          <div nz-col class="gutter-row" [nzSpan]="14">
+            <div class="grid-l3-1">
+              <main-box-title formTitle="Imagem da Capa"></main-box-title>
+              <div class="form">
+                
+                  <div class="grid-l1-1">
+                    <img class="capa" src="{{cropImgPreview}}" id="cert">                    
+                  </div> 
+
+                  <div class="addBt">     
+                    <label class="custom-file-upload">
+                      <input id="file-upload" type="file" (change)="onFileChange($event)" />
+                      +
+                    </label>    
+                  </div>
+                
+                  <div>
+                    <image-cropper 
+                      id="previewBar"
+                      [imageChangedEvent]="imgChangeEvt" 
+                      [maintainAspectRatio]="true" 
+                      [aspectRatio]="13 / 3"
+                      [resizeToWidth]="900" 
+                      [resizeToHeight]="300" 
+                      format="jpeg" 
+                      [imageQuality]="95"
+                      (imageCropped)="cropImg($event)" 
+                      (imageLoaded)="imgLoad()"
+                      (cropperReady)="initCropper()" 
+                      (loadImageFailed)="imgFailed()">
+                    </image-cropper>
+                  </div>
+
+                  <div class="prevBut">
+                    <button nz-button nzType="primary" [disabled]="capaButton" (click)="clicando()">
+                      <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+                      <div id="plusTxt">Upload</div>
+                  </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div nz-col class="gutter-row" [nzSpan]="4">
+            <div class="grid-l2-1">
+              <main-box-title formTitle="Imagem do avatar"></main-box-title>
+              <sc-profile-avatar></sc-profile-avatar>
+            </div>
+          </div>
+
+          <div nz-col class="gutter-row" [nzSpan]="4">
+            <div class="grid-l4-1">
+              <main-box-title formTitle="Alterar Senha"></main-box-title>
+              <sc-profile-pwd></sc-profile-pwd>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,37 @@
+<div class="form">
+  
+    <div class="grid-l1-1">
+      <img class="capa" src="{{cropImgPreview}}" id="cert">                    
+    </div> 
+
+    <div class="addBt">     
+      <label class="custom-file-upload">
+        <input id="file-upload" type="file" (change)="onFileChange($event)" />
+        +
+      </label>    
+    </div>
+  
+    <div>
+      <image-cropper 
+        id="previewBar"
+        [imageChangedEvent]="imgChangeEvt" 
+        [maintainAspectRatio]="true" 
+        [aspectRatio]="4 / 4"
+        [resizeToWidth]="80"
+        format="jpeg" 
+        [imageQuality]="95"
+        (imageCropped)="cropImg($event)" 
+        (imageLoaded)="imgLoad()"
+        (cropperReady)="initCropper()" 
+        (loadImageFailed)="imgFailed()">
+      </image-cropper>
+    </div>
+
+    <div class="prevBut">
+      <button nz-button nzType="primary" [disabled]="capaButton" (click)="clicando()">
+        <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+        <div id="plusTxt">Upload</div>
+    </button>
+    </div>
+</div>
+            

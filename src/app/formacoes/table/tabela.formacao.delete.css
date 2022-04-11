@@ -1,0 +1,25 @@
+::ng-deep .ant-modal-content
+{
+    background-color: #272f33;
+    border-radius: 10px;
+    padding: 0px;
+    color: rgb(231, 177, 177);
+    font-family: 'Poiret One', sans-serif;    
+    -webkit-text-stroke: 0.04rem rgb(231, 177, 177);
+}
+
+/* Notification box */
+::ng-deep .ant-notification-close-icon /* Botão x da notificação*/
+{
+    filter: invert(54%) sepia(63%) saturate(3112%) hue-rotate(158deg) brightness(91%) contrast(105%);
+}
+
+::ng-deep .anticon-check-circle /* Icone de sucesso */
+{
+    filter: invert(54%) sepia(78%) saturate(2068%) hue-rotate(82deg) brightness(107%) contrast(121%);
+}
+
+.testinhho
+{
+    margin-left: 6px;
+}

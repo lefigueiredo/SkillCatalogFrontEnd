@@ -1,0 +1,87 @@
+.newProf
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+/* Add button */
+.newProfBut button
+{
+    background-color: #242C2F;
+    border: none;
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: -15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-box-shadow: 0 0 2px rgba(27, 27, 27, 0.5);
+}
+
+#plusTxt
+{
+    margin-left: 0.5rem;
+}
+
+.newProf button:hover
+{
+    background-color: rgb(53, 139, 68);
+    transition: 0.1s;
+    transform: scale(1.05);
+}
+
+/* Input TEXT field */
+::ng-deep .newProf input
+{
+    background-color: #56646b;
+    border-radius: 6px;
+    border-width: 0px;
+    padding: 4px;
+    border: 1px solid #5f6d75;
+    width: 230px;
+}
+
+::ng-deep .newProf input:focus
+{
+    outline: none !important;
+    border:1px solid rgb(53, 139, 68);
+    box-shadow: 0 0 0px #719ECE;
+}
+
+::placeholder
+{
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.05rem;
+}
+
+::ng-deep .ng-valid /* Input text typed color */ 
+{
+    color: #FFF;
+    -webkit-text-stroke: 0.01rem #FFF;
+}
+
+::ng-deep .newProf .ant-form-item-control-input-content input /* Input size */
+{
+    width: 200px;
+}
+
+.newProfRadios
+{
+    margin-top: -5px;
+}
+
+::ng-deep .radioProfRadios .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: #fff;
+    background: rgb(53, 139, 68);
+    border-color: #242C2F;  
+}
+
+::ng-deep .newProfRadios .ant-radio-button-wrapper:hover {
+    position: relative;
+    color: rgb(53, 139, 68);;
+}

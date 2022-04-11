@@ -1,0 +1,35 @@
+<form class="newProf" nz-form [formGroup]="proficienciaForm" (ngSubmit)="sendIdioma()">
+    
+    <nz-form-item >
+        <nz-form-control [nzSm]="16" [nzXs]="24" nzErrorTip="Por favor insira uma proficiência!">
+            <input nz-input id="proficiencia" formControlName="nome" placeholder="Nova proficiência"/>
+        </nz-form-control>
+    </nz-form-item>    
+
+    <nz-form-item class="newProfRadios" >
+        <nz-form-control >
+            <nz-radio-group [(ngModel)]="radioValueS" nzButtonStyle="solid" formControlName="problema">
+                <label 
+                    nz-radio-button nzValue='SO'
+                >Sistema Operacional</label>
+                <label 
+                    nz-radio-button nzValue='Ferramenta'
+                >Ferramenta</label>
+                <label 
+                    nz-radio-button nzValue='Linguagem'
+                >Linguagem</label>
+            </nz-radio-group>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-row class="newProfBut">
+        <nz-form-control [nzOffset]="-1">
+            <button nz-button nzType="primary" [disabled]="!proficienciaForm.valid">
+                <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+                <div id="plusTxt">Adicionar</div>
+            </button>
+        </nz-form-control>
+    </nz-form-item>
+    
+    
+</form>

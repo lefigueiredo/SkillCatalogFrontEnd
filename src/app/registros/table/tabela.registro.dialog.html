@@ -1,0 +1,133 @@
+<img src="../../assets/icons/edit.svg" (click)="showModal()">
+
+<nz-modal 
+  [(nzVisible)]="isVisible" 
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  [nzTitle]="modalTitle"
+  [nzContent]="modalContent"
+  [nzFooter]="modalFooter" 
+>
+
+    <ng-template #modalTitle>Editando Formação</ng-template>
+    
+    <ng-template #modalContent>
+    
+    <form nz-form [nzLayout]="'vertical'" [formGroup]="customForm">
+        <div class="formDiv">
+            <div>
+                <nz-form-item class="insideForm">                        
+                    <nz-form-label [nzSpan]="6" ></nz-form-label>
+                    <nz-form-control >
+                        <div class="formRadio">
+                            <div class="radioIcon">
+                                <img class="radioIconSvg" src="../../assets/icons/use.svg">
+                                <p class="radioIconTxt">FUNCIONÁRIO
+                                </p>
+                            </div>         
+            
+                            <nz-form-label [nzSm]="1" nzFor="nome" [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSm]="16" [nzXs]="24" nzErrorTip="Por favor insira o Nome do funcionário!">
+                                <input [ngModel]="rowFuncNome" nz-input id="nome" formControlName="userName" placeholder="Nome do funcionário"/>
+                            </nz-form-control>
+                        </div>
+                    </nz-form-control>
+                </nz-form-item>
+                
+                <nz-form-item class="insideForm">
+                    <nz-form-label [nzSpan]="6" ></nz-form-label>
+                    <nz-form-control>
+                        <div class="formRadio">
+                            <div class="radioIcon">
+                                <img class="radioIconSvg" src="../../assets/proj.svg">
+                                <p class="radioIconTxt">FUNÇÃO</p>
+                            </div>   
+
+                            <nz-form-label [nzSm]="1" nzFor="funcao" [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSm]="16" [nzXs]="24" nzErrorTip="Por favor insira a função do funcionário">
+                                <input [ngModel]="rowFuncCargo" nz-input id="funcao" formControlName="userOccupation" placeholder="Função do funcionário" />
+                            </nz-form-control>
+                        </div>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item class="insideForm">
+                    <nz-form-label [nzSpan]="6" ></nz-form-label>
+                    <nz-form-control >
+                        <div class="formRadio">
+                            <div class="radioIcon">
+                                <img class="radioIconSvg" src="../../assets/icons/reg-team.svg">
+                                <p class="radioIconTxt">TIME</p>
+                            </div>       
+                                        
+                            <nz-form-label [nzSm]="1" nzFor="time" [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira o Time do funcionário!">
+                            <input [ngModel]="rowFuncTime" nz-input id="time" formControlName="userTeam" placeholder="Time do funcionário" />
+                            </nz-form-control>                            
+                        </div>
+                    </nz-form-control>
+                </nz-form-item>
+                
+                <nz-form-item class="insideForm">
+                    <nz-form-label [nzSpan]="6" ></nz-form-label>
+                    <nz-form-control >
+                        <div class="formRadio">
+                            <div class="radioIcon">
+                                <img class="radioIconSvg" src="../../assets/icons/reg-mail.svg">
+                                <p class="radioIconTxt">EMAIL</p>
+                            </div>       
+                                        
+                            <nz-form-label [nzSm]="1" nzFor="email" [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira o Email do funcionário!">
+                            <input [ngModel]="rowUserEmail" nz-input id="email" formControlName="userEmail" placeholder="Email do funcionário" />
+                            </nz-form-control>                            
+                        </div>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item class="insideForm">
+                    <nz-form-label [nzSpan]="6" ></nz-form-label>
+                    <nz-form-control >
+                        <div class="formRadio">
+                            <div class="radioIcon">
+                                <img class="radioIconSvg" src="../../assets/icons/reg-user.svg">
+                                <p class="radioIconTxt">USUÁRIO</p>
+                            </div>  
+                            
+                            <div class="radioDiv">
+                                <nz-radio-group 
+                                [(ngModel)]="rowUserNv" 
+                                nzButtonStyle="solid" 
+                                formControlName="userType"
+                                nzSize="small"
+                                >
+                                    <label class="radioLabel"
+                                        nz-radio-button nzValue='admin' 
+                                    >Administrador</label><br>
+                                    <label class="radioLabel"
+                                        nz-radio-button nzValue='usuario'
+                                    >Usuário</label><br>
+                                    <label class="radioLabel"
+                                        nz-radio-button nzValue='rh'
+                                    >RH</label><br>
+                                </nz-radio-group>
+                            </div>                          
+                        </div>
+                    </nz-form-control>
+                </nz-form-item>
+
+            </div>
+        </div>  
+
+        <nz-form-control>      
+            <button class="botao" nz-button nzType="primary" [disabled]="!customForm.valid" (click)="updateItem()" type="submit">
+                <div>Atualizar</div>
+            </button>
+        </nz-form-control>
+    </form>
+  </ng-template>
+
+  <ng-template #modalFooter>
+  </ng-template>    
+    
+</nz-modal>

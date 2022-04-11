@@ -1,0 +1,45 @@
+<h4 class="text-center"> Register to embrace a new world!</h4>
+
+<form [formGroup]="signupForm" class="form mt-4" novalidate (submit)="signup()">
+    <div class="form-group">
+        <input formControlName="userEmail" placeholder="Email" class="form-control" autofocus >
+        <sc-vmessage *ngIf="signupForm.get('userEmail')?.errors?.email" text="O email inválido!"></sc-vmessage>
+        <sc-vmessage *ngIf="signupForm.get('userEmail')?.errors?.userNameTaken" text="Email já cadastrado!"></sc-vmessage>
+    </div>
+
+    <div class="form-group">
+        <input formControlName="userType" placeholder="Tipo de usuario" class="form-control">
+        <div *ngIf="signupForm.get('userType')?.invalid && (signupForm.get('userType')?.dirty || signupForm.get('userType')?.touched)">
+            <sc-vmessage *ngIf="signupForm.get('userType')?.errors?.required" text="O tipo do usuário é obrigatório!"></sc-vmessage>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input formControlName="userName" placeholder="Nome Completo" class="form-control">
+        <div *ngIf="signupForm.get('userName')?.invalid && (signupForm.get('userName')?.dirty || signupForm.get('userName')?.touched)">
+            <sc-vmessage *ngIf="signupForm.get('userName')?.errors?.required" text="O nome do funcionário é obrigatório!"></sc-vmessage>
+            <sc-vmessage *ngIf="signupForm.get('userName')?.errors?.minlength" text="Tamanho mínimo é de 5 caracteres!"></sc-vmessage>
+            <sc-vmessage *ngIf="signupForm.get('userName')?.errors?.maxlength" text="Tamanho máximo é de 255 caracteres!"></sc-vmessage>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input formControlName="userOccupation" placeholder="Cargo" class="form-control">
+        <div *ngIf="signupForm.get('userOccupation')?.invalid && (signupForm.get('userOccupation')?.dirty || signupForm.get('userOccupation')?.touched)">
+            <sc-vmessage *ngIf="signupForm.get('userOccupation')?.errors?.required" text="O cargo do funcionário é obrigatório!"></sc-vmessage>
+            <sc-vmessage *ngIf="signupForm.get('userOccupation')?.errors?.minlength" text="Tamanho mínimo é de 5 caracteres!"></sc-vmessage>
+            <sc-vmessage *ngIf="signupForm.get('userOccupation')?.errors?.maxlength" text="Tamanho máximo é de 70 caracteres!"></sc-vmessage>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input formControlName="userTeam" placeholder="Time" class="form-control">
+        <div *ngIf="signupForm.get('userTeam')?.invalid && (signupForm.get('userTeam')?.dirty || signupForm.get('userTeam')?.touched)">
+            <sc-vmessage *ngIf="signupForm.get('userTeam')?.errors?.required" text="O time do funcionário é obrigatório!"></sc-vmessage>
+            <sc-vmessage *ngIf="signupForm.get('userTeam')?.errors?.minlength" text="Tamanho mínimo é de 5 caracteres!"></sc-vmessage>
+            <sc-vmessage *ngIf="signupForm.get('userTeam')?.errors?.maxlength" text="Tamanho máximo é de 45 caracteres!"></sc-vmessage>
+        </div>
+    </div>
+
+    <button [disabled]="signupForm.invalid" class="btn btn-primary btn-block">Register</button>
+</form>

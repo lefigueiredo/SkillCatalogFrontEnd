@@ -1,0 +1,97 @@
+<html>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+    <body>   
+    <div class="container">
+        <div id="headerEdit">
+            <img id="idiLogo" src="../../assets/icons/for-head.svg">
+            <div id="idiHeader">FORMAÇÕES</div>            
+        </div>
+
+        <div class="gutter-example">          
+            <div nz-row [nzGutter]="[16, 16]"> <!-- Distancia em pixel dos cards -->
+
+            <div nz-col class="gutter-row" [nzSpan]="10">
+                <div class="grid-l3-1">
+                    <main-box-title formTitle="Adicionar Formação"></main-box-title>
+                    
+                    <form class="formin" nz-form [formGroup]="formaForm" (ngSubmit)="sendFormacao()">
+                        <nz-form-item>
+                            <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="instituicao" nzRequired [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSm]="16" [nzXs]="24" nzErrorTip="Por favor insira a Instituição!">
+                                <input nz-input id="instituicao" formControlName="instituicao" placeholder="Instituição de Ensino"/>
+                            </nz-form-control>
+                        </nz-form-item>  
+
+                          <nz-form-item>
+                            <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="diploma" nzRequired [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira o Diploma!">
+                              <input nz-input id="diploma" formControlName="diploma" placeholder="Diploma ex: Bacharel" />
+                            </nz-form-control>
+                          </nz-form-item>  
+                      
+                        <nz-form-item>
+                          <nz-form-label [nzSm]="2" [nzXs]="24" nzFor="area" nzRequired [nzNoColon]="true"></nz-form-label>
+                          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor insira a Área!">
+                            <input nz-input id="area" formControlName="area" placeholder="Área ex: Administração" />
+                          </nz-form-control>
+                        </nz-form-item>  
+
+                        <nz-form-item nz-row class="register-area">
+                            <nz-form-label [nzSm]="2" [nzXs]="24" nzRequired [nzNoColon]="true"></nz-form-label>
+                            <nz-form-control [nzSpan]="14" [nzOffset]="2" >
+                                <nz-date-picker 
+                                    [(ngModel)]="dataI" 
+                                    formControlName="data_inicio" 
+                                    [nzPlaceHolder]="'Data inicio'"
+                                    [nzSize]="'large'"
+                                ></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item nz-row class="register-area">
+                            <nz-form-label [nzSm]="2" [nzXs]="24" nzRequired [nzNoColon]="true" ></nz-form-label>
+                            <nz-form-control [nzSpan]="14" [nzOffset]="2">
+                                <nz-date-picker 
+                                    [(ngModel)]="dataF" 
+                                    formControlName="data_fim" 
+                                    [nzPlaceHolder]="'Data conclusão'"
+                                    [nzSize]="'large'"
+                                ></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item nz-row class="register-area">
+                        <nz-form-control [nzSpan]="14" [nzOffset]="2">
+                            <button nz-button nzType="primary" [disabled]="!formaForm.valid">
+                            <img id="plusLogo" src="../../assets/icons/plus.svg"> 
+                            <div id="plusTxt">Adicionar</div>
+                        </button>
+                        </nz-form-control>
+                        </nz-form-item>
+                    </form>
+
+                </div>                
+            </div>
+            
+            <div nz-col class="gutter-row" [nzSpan]="10">
+                <div class="grid-l3-1" >
+                    <main-box-title formTitle="Minhas Formações"></main-box-title>
+                    <div class="tabela">   
+                    <sc-table-forma
+                        [colList]="listOfColumn"
+                        [rowList]="allFormations"
+                        [skillTypes]="listOfType"
+                    >
+                    </sc-table-forma>                
+                    </div>
+                </div>
+            </div>   
+        </div>
+      </div>
+    </div>
+    </body>
+</html>
+

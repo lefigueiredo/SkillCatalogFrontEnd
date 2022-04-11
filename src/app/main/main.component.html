@@ -1,0 +1,114 @@
+<html>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <body>
+    <div class="container">
+      <div class="gutter-example">
+        <div nz-row [nzGutter]="[16, 16]"> <!-- Distancia em pixel dos cards -->
+          
+          <div nz-col class="gutter-row" [nzSpan]="24">
+            <div class="grid-l1-1">
+              <img class="capa" src="{{capaImg}}" id="cert" (click)="config()"> 
+              <div *ngIf="user" class="capaNome">
+                <div>{{user.name}}</div>
+                <div class="occu">{{user.occu}}</div>
+              </div>
+            </div>            
+          </div>
+
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div class="grid-l1-4">
+              <img src="../../assets/exp.svg" id="cert"> 
+              <p id="grid-l1-time1">{{ funcTime }}</p>                         
+              <p class="grid-l1-type">Experiência</p>
+            </div>            
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div class="grid-l1-4">
+              <img src="../../assets/proj.svg" id="cert"> 
+              <p id="grid-l1-time2">7+</p>                         
+              <p class="grid-l1-type">Projetos</p>
+            </div>            
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div class="grid-l1-4">
+              <img src="../../assets/prof.svg" id="cert"> 
+              <p id="grid-l1-time3">{{ funcProf }}</p>                         
+              <p class="grid-l1-type">Proficiências</p>
+            </div>            
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div class="grid-l1-4">
+              <img src="../../assets/cert.svg" id="cert"> 
+              <p id="grid-l1-time4">{{ funcFormaa }}</p>                         
+              <p class="grid-l1-type">Formações</p>
+            </div>            
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="8">
+            <div class="grid-l2-1">              
+              <main-box-title formTitle="Idioma"></main-box-title>
+              <main-box-idi *ngFor="let idi of funcIdi" 
+              [formNome]="idi.nome" 
+              [formNv]="idi.nivel"
+              [barColor]="idi.barColor"              
+              ></main-box-idi>
+            </div>
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="8">
+            <div class="grid-l2-1">
+              <main-box-title formTitle="Proficiência"></main-box-title>
+              <main-box-idi *ngFor="let prof of funcProfs" 
+              [formNome]="prof.nome" 
+              [formNv]="prof.nivel"
+              [barColor]="prof.barColor"              
+              ></main-box-idi>
+            </div>
+          </div>    
+          
+          <div nz-col class="gutter-row" [nzSpan]="8">
+            <div class="grid-l2-1">
+              <main-box-title formTitle="Social"></main-box-title>
+            </div>
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="10">
+              <div class="grid-l3-1">
+                <main-box-title formTitle="Formação Acadêmica"></main-box-title>
+                <main-box-forma *ngFor="let form of funcForma" 
+                  [formInst]="form.instituicao" 
+                  [formDipl]="form.diploma"
+                  [formArea]="form.area"
+                  [formFim]="form.data_fim">
+                </main-box-forma>
+              </div>
+          </div>
+          
+          <div nz-col class="gutter-row" [nzSpan]="8">
+            <div class="grid-l3-1" >
+              <main-box-title formTitle="Experiência"></main-box-title>
+              <main-box-exp *ngFor="let form of funcExp" 
+                [formTit]="form.titulo" 
+                [formEmp]="form.empresa"
+                [formInicio]="form.data_inicio"
+                [formFim]="form.data_fim">
+              </main-box-exp>
+            </div>
+          </div>
+    
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div class="grid-l3-1">
+              <main-box-title formTitle="Projeto"></main-box-title>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

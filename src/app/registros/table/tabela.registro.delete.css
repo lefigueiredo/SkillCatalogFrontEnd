@@ -1,0 +1,25 @@
+::ng-deep .ant-modal-content
+{
+    background-color: #272f33;
+    border-radius: 10px;
+    padding: 0px;
+    color: rgb(231, 177, 177);
+    font-family: 'Poiret One', sans-serif;    
+    -webkit-text-stroke: 0.04rem rgb(231, 177, 177);
+}
+
+/* Notification box */
+::ng-deep .ant-notification-close-icon /* Botão x da notificação*/
+{
+    filter: brightness(0) saturate(100%) invert(80%) sepia(86%) saturate(391%) hue-rotate(351deg) brightness(104%) contrast(97%);filter: brightness(0) saturate(100%) invert(80%) sepia(86%) saturate(391%) hue-rotate(351deg) brightness(104%) contrast(97%);
+}
+
+::ng-deep .anticon-check-circle /* Icone de sucesso */
+{
+    filter: invert(54%) sepia(78%) saturate(2068%) hue-rotate(82deg) brightness(107%) contrast(121%);
+}
+
+.testinhho
+{
+    margin-left: 6px;
+}

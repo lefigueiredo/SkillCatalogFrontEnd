@@ -1,0 +1,275 @@
+body
+{
+    background-color: #242C2F;
+}
+
+.title 
+{
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;    
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+/* Grids layout */
+.grid-l3-1
+{
+    height: 505px;
+    background: #334047;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.grid-l2-1
+{
+    height: 151px;
+    background: #334047;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.grid-l5-1
+{
+    height: 280px;
+    background: #334047;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+/* Idioma form */
+.form
+{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;   
+    -webkit-text-stroke: 0.03rem rgb(255, 255, 255);
+}
+
+::ng-deep .ant-popover-inner-content {
+    padding: 12px 16px;
+    color: rgba(0,0,0,.85);
+    white-space: pre-line;
+}
+
+::ng-deep label
+{
+    color: #FFF;
+    font-size: 1.1rem !important; 
+}
+
+/* Idioma levels buttons */
+::ng-deep.ant-radio-button-wrapper:not(:first-child)::before 
+{
+    width: 0px;
+}
+
+::ng-deep .ant-radio-button-wrapper:first-child
+{
+    border: 1px solid #56646b;
+    border-left: 1px solid #56646b;   
+    border-radius: 5px; 
+}
+
+::ng-deep .ant-radio-button-wrapper:last-child
+{
+    border: 1px solid #56646b;
+    border-left: 1px solid #56646b;  
+    border-radius: 5px;   
+}
+
+::ng-deep .ant-radio-button-wrapper 
+{
+    background:#4d5b63;
+    border: 1px solid #56646b;
+    border-left: 1px solid #56646b; 
+    margin-left: 10px;
+    border-radius: 5px; 
+}
+
+::ng-deep .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: #fff;
+    background: #242C2F;
+    border-color: #242C2F;  
+}
+
+::ng-deep .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+    color: #fff;
+    background: #567885;
+    border-color: #333e42;
+}
+
+::ng-deep .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    z-index: 1;
+    color: #333e42;
+    background: #fff;
+    border-color: #333e42;
+}
+
+::ng-deep .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child {
+    border-color: #242C2F;
+}
+
+::ng-deep .ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+    border-right-color: #242C2F;
+}
+
+::ng-deep .radioButIdi .ant-radio-button-wrapper:hover {
+    position: relative;
+    color: #1b8299;
+}  
+
+::ng-deep .cdk-virtual-scroll-orientation-vertical
+{
+    overflow: auto;
+}
+
+::ng-deep path
+{
+    color: #fff;
+}
+
+/* Idioma dropdown */
+::ng-deep .ant-select-dropdown
+{
+    font-size: 15rem;
+    font-family: 'Poiret One', sans-serif;
+    background-color: #bec1c2;
+    -webkit-text-stroke: 0.01rem #242C2F;
+    width: 130px;    
+} 
+
+::ng-deep .ant-select:not(.ant-select-customize-input) .ant-select-selector 
+{
+    font-size: 1.2rem;
+}
+
+::ng-deep .ant-select:not(.ant-select-customize-input) .ant-select-selector 
+{
+    position: relative;
+    background-color: #333e42;
+    border: 1px solid #434f53;
+    border-radius: 6px;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+::ng-deep .ant-select:not(.ant-select-disabled):hover .ant-select-selector 
+{
+    border-color: #1b8299;
+}
+
+::ng-deep .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector 
+{
+    border-color: #1b8299;
+}
+
+/* Text info about radio buttons */
+.popover 
+{
+    white-space: pre-wrap;    
+}
+
+/* Scroolbar customize */
+::ng-deep ::-webkit-scrollbar 
+{
+    width: 0.625rem;
+    overflow-y: scroll;
+    background: rgb(180, 180, 180);
+    box-shadow: inset 0 0 4px #707070;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::ng-deep ::-webkit-scrollbar-thumb 
+{
+    background: #717f85;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* Tabela */
+.tabela
+{
+    margin:auto;
+    max-width: 90%;
+}
+
+.tabela1
+{
+    margin:auto;
+    max-width: 60%;
+}
+
+/* Component title */
+#headerEdit
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#idiLogo
+{    
+    transform: scale(1.5);
+}
+
+.textograf
+{
+    margin-left: 2rem;
+    font-family: 'Poiret One', sans-serif;
+    color: #FFF;   
+    -webkit-text-stroke: 0.01rem rgb(255, 255, 255);
+}
+
+#idiHeader
+{
+    font-size: 3rem;
+    font-family: 'Poiret One', sans-serif;
+    color: #136678;
+    -webkit-text-stroke: 0.09rem #1b8299;
+    margin-left: 1.2rem;
+}
+
+/* Add button */
+.ButtonMsgDiv
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.ButtonMsg
+{
+    margin-left: 10px;
+    margin-top: -5px;
+    -webkit-text-stroke: 0.05rem rgb(214, 42, 42);
+}
+
+
+button
+{
+    background-color: #242C2F;
+    border: none;
+    color: #fff;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: -0.8rem;
+    margin-left: -1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-box-shadow: 0 0 2px rgba(27, 27, 27, 0.5);
+}
+
+#plusTxt
+{
+    margin-left: 0.5rem;
+}
+
+button:hover
+{
+    background-color: #1b8299;
+    transition: 0.1s;
+    transform: scale(1.05);
+}
